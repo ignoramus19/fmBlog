@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="jumbotron text-center">
+    <h3>Football & Manager Bloguna Hoşgeldiniz...</h3><br>
+    <hr>
+    <p>Futbol ve Football Manager ile alakalı güncel ve eğlenceli içerikler için doğru adrestesiniz.</p>
+    <hr>
+    <p>Football&Manager ailesine kolayca katılarak sen de dilediğin F&M paylaşımını yapabilirsin!</p>
+    <hr>
+</div>
+
+<p class = "alert alert-success">
+    {% if request.user.is_authenticated %}
+        Giriş Yapılmış, {{request.user.username}}<br>
+        Güzel Bir Football & Manager Gününe Hoşgeldin!
+    {% else %}
+        Giriş Yapılmamış
+    {% endif %}
+</p>
+{% endblock body %}
